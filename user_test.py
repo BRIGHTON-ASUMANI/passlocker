@@ -1,12 +1,12 @@
 import unittest # Importing the unittest module
-from user import User # Importing the contact class
+from user import User # Importing the user class
 
 class TestUser(unittest.TestCase):
     def setUp(self):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("Brighton","Asumani","bright@gmail.com","asu","password","password") # create contact object
+        self.new_user = User("Brighton","Asumani","bright@gmail.com","asu","password","password") # create user object
 
 
     def test_init(self):
@@ -30,8 +30,27 @@ class TestUser(unittest.TestCase):
 
     def test_save_multiple_users(self):
             '''
-            test_save_multiple_contact to check if we can save multiple contact
-            objects to our contact_list
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
+            '''
+            self.new_user.save_user()
+            test_user = User("Test","user","test@gmail.com","tested","pass","pass") # new user
+            test_user.save_user()
+            self.assertEqual(len(User.user_list),2)
+
+
+    # setup and class creation up here
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            User.user_list = []
+
+    # other test cases here
+    def test_save_multiple_users(self):
+            '''
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
             '''
             self.new_user.save_user()
             test_user = User("Test","user","test@gmail.com","tested","pass","pass") # new user
