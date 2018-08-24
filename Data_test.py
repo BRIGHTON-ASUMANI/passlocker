@@ -74,7 +74,7 @@ class TestCredential(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credential = Credential("twitter", "password") # create contact object
+        self.new_credential = Credential("twitter", "password") # create credential object
 
 
     def test_init(self):
@@ -84,6 +84,15 @@ class TestCredential(unittest.TestCase):
 
         self.assertEqual(self.new_credential.account,"twitter")
         self.assertEqual(self.new_credential.password,"password")
+
+    def test_save_credential(self):
+        '''
+        test_save_credential test case to test if the credential object is saved into
+         the credential list
+        '''
+        self.new_credential.save_credential() # saving the new credential
+        self.assertEqual(len(Credential.credential_list),1)
+
 
     # def test_find_user_by_number(self):
     #     '''
