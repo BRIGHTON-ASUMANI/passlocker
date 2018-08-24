@@ -22,6 +22,8 @@ class User:
 
             User.user_list.append(self)
 
+    
+
 
 
 class Credential:
@@ -57,7 +59,7 @@ class Credential:
     @classmethod
     def find_by_secretkey(cls,secretkey):
         '''
-        Method that takes in a number and returns a contact that matches that secretkey.
+        Method that takes in a number and returns a credential that matches that secretkey.
 
         Args:
             secretkey to search for
@@ -73,14 +75,21 @@ class Credential:
     @classmethod
     def credential_exist(cls,secretkey):
         '''
-        Method that checks if a contact exists from the contact list.
+        Method that checks if a credential exists from the credential list.
         Args:
             number: Phone number to search if it exists
         Returns :
-            Boolean: True or false depending if the contact exists
+            Boolean: True or false depending if the credential exists
         '''
         for account in cls.credential_list:
             if account.secretkey == secretkey:
                     return True
 
         return False
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the contact list
+        '''
+        return cls.credential_list

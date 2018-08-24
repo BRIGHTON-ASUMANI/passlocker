@@ -56,6 +56,7 @@ class TestUser(unittest.TestCase):
             test_user = User("Test","user","test@gmail.com","tested","pass") # new user
             test_user.save_user()
             self.assertEqual(len(User.user_list),2)
+    
 
 
 
@@ -148,42 +149,16 @@ class TestCredential(unittest.TestCase):
         credential_exists = Credential.credential_exist("secretkey")
 
         self.assertTrue(credential_exists)
+    def test_display_all_credentials(self):
+        '''
+        method that returns a list of all contacts saved
+        '''
+
+        self.assertEqual(Credential.display_credentials(),Credential.credential_list)
 
 
 
 
-    #
-    # def test_user_exists(self):
-    #     '''
-    #     test to check if we can return a Boolean  if we cannot find the user.
-    #     '''
-    #
-    #     self.new_user.save_user()
-    #     test_user = User("Test","user","test@gmail.com","tested","pass","pass") # new user
-    #     test_user.save_user()
-    #
-    #     user_exists = User.user_exist("test@gmail.com")
-    #
-    #     self.assertTrue(user_exists)
-    #
-    #
-    # def test_display_all_users(self):
-    #     '''
-    #     method that returns a list of all users saved
-    #     '''
-    #
-    #     self.assertEqual(User.display_users(),User.user_list)
-    #
-    # def test_copy_email(self):
-    #     '''
-    #     Test to confirm that we are copying the email address from a found user
-    #     '''
-    #
-    #     self.new_user.save_user()
-    #     User.copy_email("test@gmsil.com")
-    #
-    #     self.assertEqual(self.new_user.email,pyperclip.paste())
-    #
 
 
 if __name__ == '__main__':
