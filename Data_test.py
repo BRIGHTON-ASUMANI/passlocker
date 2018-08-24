@@ -57,24 +57,14 @@ class TestUser(unittest.TestCase):
             test_user.save_user()
             self.assertEqual(len(User.user_list),2)
 
-    # # More tests above
-    # def test_delete_user(self):
-    #         '''
-    #         test_delete_user to test if we can remove a user from our user list
-    #         '''
-    #         self.new_user.save_user()
-    #         test_user = User("Test","user","test@gmail.com","tested","pass","pass") # new user
-    #         test_user.save_user()
-    #
-    #         self.new_user.delete_user()# Deleting a user object
-    #         self.assertEqual(len(User.user_list),1)
-    #
+
+
 class TestCredential(unittest.TestCase):
     def setUp(self):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credential = Credential("twitter", "password") # create credential object
+        self.new_credential = Credential("twitter", "password", 'secretkey') # create credential object
 
 
     def test_init(self):
@@ -84,6 +74,7 @@ class TestCredential(unittest.TestCase):
 
         self.assertEqual(self.new_credential.account,"twitter")
         self.assertEqual(self.new_credential.password,"password")
+        self.assertEqual(self.new_credential.secretkey,"secretkey")
 
     def test_save_credential(self):
         '''
@@ -99,7 +90,7 @@ class TestCredential(unittest.TestCase):
             objects to our credential_list
             '''
             self.new_credential.save_credential()
-            test_credential = Credential("twitter","password") # new credential
+            test_credential = Credential("twitter","password",'secretkey') # new credential
             test_credential.save_credential()
             self.assertEqual(len(Credential.credential_list),2)
 
@@ -117,7 +108,7 @@ class TestCredential(unittest.TestCase):
             objects to our credential_list
             '''
             self.new_credential.save_credential()
-            test_credential = Credential("twitter","password") # new credential
+            test_credential = Credential("twitter","password",'seccretkey') # new credential
             test_credential.save_credential()
             self.assertEqual(len(Credential.credential_list),2)
 
@@ -126,26 +117,29 @@ class TestCredential(unittest.TestCase):
             test_delete_credential to test if we can remove a credential from our credential list
             '''
             self.new_credential.save_credential()
-            test_credential = Credential("Twitter","password") # new credential
+            test_credential = Credential("Twitter","password",'secretkey') # new credential
             test_credential.save_credential()
 
             self.new_credential.delete_credential()# Deleting a credential object
             self.assertEqual(len(Credential.credential_list),1)
+    def test_find_credential_by_secretkey(self):
+        '''
+        test to check if we can find a credential by secretkey and display information
+        '''
+
+        self.new_credential.save_credential()
+        test_credential = Credential("twitter",'password','secretkey') # new credential
+        test_credential.save_credential()
+
+        found_credential = Credential.find_by_secretkey("secretkey")
+
+        self.assertEqual(found_credential.secretkey,test_credential.secretkey)
 
 
-    # def test_find_user_by_number(self):
-    #     '''
-    #     test to check if we can find a user by phone number and display information
-    #     '''
-    #
-    #     self.new_user.save_user()
-    #     test_user = User("Test","user","test@gmail.com","tested","pass","pass") # new user
-    #     test_user.save_user()
-    #
-    #     found_user = User.find_by_email("test@gmail.com")
-    #
-    #     self.assertEqual(found_user.email,test_user.email)
-    #
+
+
+
+
     #
     # def test_user_exists(self):
     #     '''

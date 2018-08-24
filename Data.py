@@ -24,17 +24,17 @@ class User:
 
 
 
-
-
 class Credential:
+
     credential_list = []
     #Class that generates new instances of users
-    def __init__(self,account,password,):
+    def __init__(self,account,password,secretkey):
 
       # docstring removed for simplicity
 
         self.account = account
         self.password = password
+        self.secretkey = secretkey
 
     def save_credential(self):
 
@@ -45,8 +45,6 @@ class Credential:
         Credential.credential_list.append(self)
 
 
-
-
     def delete_credential(self):
 
         '''
@@ -55,44 +53,18 @@ class Credential:
 
         Credential.credential_list.remove(self)
 
+
     @classmethod
-    def find_by_account(cls,account):
+    def find_by_secretkey(cls,secretkey):
         '''
-        Method that takes in an account and returns an account that matches the name.
+        Method that takes in a number and returns a contact that matches that secretkey.
 
         Args:
-            number: account to search for
+            secretkey to search for
         Returns :
-            User of person that matches the email.
+            credential of person that matches the secretkey.
         '''
 
-        for user in cls.credential_list:
-            if credential.account == account:
-                return account
-
-    @classmethod
-    def credential_exist(cls,password):
-        '''
-        Method that checks if an account exists from the credential list .
-        Args:
-            account: account to search if it exists
-        Returns :
-            Boolean: True or false depending if the credential exists
-        '''
-        for account in cls.credential_list:
-            if credential.account == account:
-                    return True
-
-        return False
-
-    @classmethod
-    def display_users(cls):
-        '''
-        method that returns the user list
-        '''
-        return cls.user_list
-
-    @classmethod
-    def copy_email(cls,email):
-        user_found = User.find_by_email(email)
-        pyperclip.copy(user_found.email)
+        for credential in cls.credential_list:
+            if credential.secretkey == secretkey:
+                return credential
