@@ -4,7 +4,7 @@ class User:
         #Class that generates new instances of users
 
         user_list = [] # Empty user list
-        def __init__(self,first_name,last_name,email,user_name,password):
+        def __init__(self,first_name,last_name,user_name,email,password):
 
           # docstring removed for simplicity
 
@@ -27,61 +27,57 @@ class User:
 
 
 class Credential:
-    Credential_list = []
+    credential_list = []
     #Class that generates new instances of users
-    def __init__(self,first_name,last_name,email,username,password,confirmpassword):
+    def __init__(self,account,password,):
 
       # docstring removed for simplicity
 
-        self.first_name = first_name
-        self.last_name = last_name
-        self.username = username
-        self.email = email
+        self.acount = account
         self.password = password
-        self.confirmpassword = confirmpassword
 
-    def save_user(self):
+    def save_credential(self):
 
         '''
         save_user method saves user objects into user_list
         '''
 
-        User.user_list.append(self)
+        Credential.credential_list.append(self)
 
-    def delete_user(self):
+    def delete_Credential(self):
 
         '''
         delete_user method deletes a saved user from the user_list
         '''
 
-        User.user_list.remove(self)
+        Credential.credential_list.remove(self)
 
     @classmethod
-    def find_by_email(cls,email):
+    def find_by_account(cls,account):
         '''
-        Method that takes in an email and returns a user that matches that email.
+        Method that takes in an account and returns an account that matches the name.
 
         Args:
-            number: email to search for
+            number: account to search for
         Returns :
             User of person that matches the email.
         '''
 
-        for user in cls.user_list:
-            if user.email == email:
-                return user
+        for user in cls.credential_list:
+            if credential.account == account:
+                return account
 
     @classmethod
-    def user_exist(cls,email):
+    def credential_exist(cls,password):
         '''
-        Method that checks if a user exists from the user list.
+        Method that checks if an account exists from the credential list .
         Args:
-            email: email to search if it exists
+            account: account to search if it exists
         Returns :
-            Boolean: True or false depending if the user exists
+            Boolean: True or false depending if the credential exists
         '''
-        for user in cls.user_list:
-            if user.email == email:
+        for account in cls.credential_list:
+            if credential.account == account:
                     return True
 
         return False
