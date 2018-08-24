@@ -68,3 +68,19 @@ class Credential:
         for credential in cls.credential_list:
             if credential.secretkey == secretkey:
                 return credential
+
+
+    @classmethod
+    def credential_exist(cls,secretkey):
+        '''
+        Method that checks if a contact exists from the contact list.
+        Args:
+            number: Phone number to search if it exists
+        Returns :
+            Boolean: True or false depending if the contact exists
+        '''
+        for account in cls.credential_list:
+            if account.secretkey == secretkey:
+                    return True
+
+        return False

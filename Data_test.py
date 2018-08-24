@@ -136,6 +136,18 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(found_credential.secretkey,test_credential.secretkey)
 
 
+    def test_crendential_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the account.
+        '''
+
+        self.new_credential.save_credential()
+        test_credential = Credential("Test","user","secretkey") # new account
+        test_credential.save_credential()
+
+        credential_exists = Credential.credential_exist("secretkey")
+
+        self.assertTrue(credential_exists)
 
 
 
