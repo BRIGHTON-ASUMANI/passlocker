@@ -33,7 +33,7 @@ class Credential:
 
       # docstring removed for simplicity
 
-        self.acount = account
+        self.account = account
         self.password = password
 
     def save_credential(self):
