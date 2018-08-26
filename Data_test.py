@@ -56,7 +56,7 @@ class TestUser(unittest.TestCase):
             test_user = User("Test","user","test@gmail.com","tested","pass") # new user
             test_user.save_user()
             self.assertEqual(len(User.user_list),2)
-    
+
 
 
 
@@ -74,7 +74,7 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_credential.account,"twitter")
-        self.assertEqual(self.new_credential.password,"password")
+        self.assertEqual(self.new_credential.ac_password,"password")
         self.assertEqual(self.new_credential.secretkey,"secretkey")
 
     def test_save_credential(self):

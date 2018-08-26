@@ -1,9 +1,23 @@
 import pyperclip
 
+
 class User:
         #Class that generates new instances of users
 
         user_list = [] # Empty user list
+        user_credentials_list = [] 
+
+
+        @classmethod
+        def validate_users(cls,first_name,password):
+            '''
+            confirmation of passwords
+            '''
+            old_user = ''
+            for user in User.user_list:
+                if user.first_name == first_name and user.password == password:
+                    old_user = user.first_name
+            return old_user
         def __init__(self,first_name,last_name,user_name,email,password):
 
           # docstring removed for simplicity
@@ -22,7 +36,7 @@ class User:
 
             User.user_list.append(self)
 
-    
+            
 
 
 
@@ -30,12 +44,13 @@ class Credential:
 
     credential_list = []
     #Class that generates new instances of users
-    def __init__(self,account,password,secretkey):
+    def __init__(self,account,ac_password,secretkey):
 
       # docstring removed for simplicity
 
+
         self.account = account
-        self.password = password
+        self.password = ac_password
         self.secretkey = secretkey
 
     def save_credential(self):
@@ -93,3 +108,5 @@ class Credential:
         method that returns the contact list
         '''
         return cls.credential_list
+   
+
