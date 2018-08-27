@@ -175,7 +175,7 @@ def main():
                                     if display_secretkeys():
                                         print('-'*210)
                                         for credential in display_secretkeys():
-                                            print(f'here are your search results\n account: {credential.account} \n Account password: {credential.password}\n ')
+                                            print(f'here are your search results\n account: {credential.account} \n Account password: {credential.ac_password}\n ')
                                         print('-'*210)
                                     else:
                                         print("No accounts found")
@@ -185,7 +185,7 @@ def main():
                                     sec = input('please enter the secret key of the account you want to search for: ')
                                     if check_existing_credentials(sec):
                                         search_secret = find_credential(sec)
-                                        print(f'account: {search_secret.account} \n account-password: {search_secret.password}')
+                                        print(f'account: {search_secret.account} \n account-password: {search_secret.ac_password}')
                                     else:
                                         print('the account doesn\'t exist')
                                 elif ac_code == 'ex':

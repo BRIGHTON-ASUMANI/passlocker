@@ -5,7 +5,7 @@ class User:
         #Class that generates new instances of users
 
         user_list = [] # Empty user list
-        user_credentials_list = [] 
+        user_credentials_list = []
 
 
         @classmethod
@@ -36,7 +36,7 @@ class User:
 
             User.user_list.append(self)
 
-            
+
 
 
 
@@ -50,7 +50,7 @@ class Credential:
 
 
         self.account = account
-        self.password = ac_password
+        self.ac_password = ac_password
         self.secretkey = secretkey
 
     def save_credential(self):
@@ -108,5 +108,3 @@ class Credential:
         method that returns the contact list
         '''
         return cls.credential_list
-   
-
