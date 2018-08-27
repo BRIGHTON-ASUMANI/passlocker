@@ -1,6 +1,6 @@
-## __Application name: Password Locker __
+## Application name: Password Locker 
 
-## __Author: Brighton Asumani__
+## Author: Brighton Asumani
 
 ### Problem Solving
 > People do have multiple accounts and their passwords some of this accounts include:
