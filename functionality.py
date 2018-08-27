@@ -128,12 +128,12 @@ def main():
                     save_users(create_user(first_name,last_name,user_name,email,password))
                     print('welcome to password locker' )
                     print ('-'*210)
-                    print(f"Here are your account details \n first name:{first_name} \n last_name: {last_name} \n user name: {user_name} \n email address: {email} \n password: {password}")
+                    print(f"Here are your account details \n first name:{first_name} \n last name: {last_name} \n user name: {user_name} \n email address: {email} \n password: {password}")
                     print ('\n')
 
                 elif short_code == 'login':
                         print('Welcome back. To login please enter your details\n')
-                        user_name = input('Enter your username: ')
+                        user_name = input('Enter your first name: ')
                         password = getpass.getpass('enter your password ')
 
                         user_logs = confirmation_user(user_name,password)

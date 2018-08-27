@@ -1,4 +1,4 @@
-## __Application name: Password Locker__
+## :Kagetsuki: __Application name: Password Locker__
 
 ## __Author: Brighton Asumani__
 
@@ -11,6 +11,20 @@
 > The problem that arises is that people tend to forget some passwords of different accounts
 > ...Therefore this application solves this problem by storing a user's account and the password related to it.
 > An example is like twitter. You can store the \*account\*: *twitter* and the \*password\*: *twitterpassword*
+
+***
+### __Technologies and syntax used__
+1. Technologies
+    * python3.6
+    * pyperclip *how to install pyperclip:* __python3.6 -m pip install pyperclip__
+    * runs on ***>=*** ubuntu 16.04
+2. Syntax
+    * import getpass
+    * import pyperclip
+    * import random
+3. The application runs 10 tests has two classes Users and Credentials
+
+***
 
 ### __How the application works__
 1. First of all the user has to be able to run the application using \*_python3.6 functionality.py_\* but if the user has run the following command \*chmod +x functionality.py\* on the terminal he can run the application by typing *./functionality.py*
@@ -33,4 +47,8 @@
       * *note* you will be asked to enter the secret key of your account so as to be able to search for your saved account credentials
   > **_d:_** displays your saved credentials account and its password
 
-4.  
+***
+
+## Here some images to elaborate how the application works
+![user sign up and login](/images/1.png)
+![account to store date](/images/2.png)
