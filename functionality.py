@@ -169,7 +169,7 @@ def main():
                                             print('please read the instructions carefully and try again')
                                             break
                                     save_credentials(create_credential(account,ac_password, secretkey))
-                                    print(f'here are your account details: {account}....{ac_password}....{secretkey}')
+                                    print(f'here are your account details: \n......{account}\n........{ac_password}\n..........{secretkey}')
 
                                 elif ac_code == 'd':
                                     if display_secretkeys():
