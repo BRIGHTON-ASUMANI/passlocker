@@ -1,4 +1,4 @@
-## :Kagetsuki: __Application name: Password Locker__
+## :grin: __Application name: :computer: Password Locker :computer:__ :grin:
 
 ## __Author: Brighton Asumani__
 
