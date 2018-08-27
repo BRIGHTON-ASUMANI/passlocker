@@ -88,28 +88,28 @@ def main():
                 s = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#~!"£$%^&*()/*+='
                 passlen = 6
                 secpass = 4
-                print("-"*40)
+                print('-'*210)
                 print("Use these short codes : create - create a new password locker account, login - if you are already a user,  exit - to exit the app ")
-                print("-"*40)
+                print('-'*210)
                 short_code = input('Enter a shortcode: ').lower()
                 if short_code == 'create':
                     print('enter your first name: ')
                     first_name = input()
-                    print("-"*40)
+                    print('-'*210)
 
                     print('enter your last name: ')
                     last_name = input()
-                    print("-"*40)
+                    print('-'*210)
 
 
                     print('enter your user name: ')
                     user_name = input()
-                    print("-"*40)
+                    print('-'*210)
 
 
                     print('enter your email: ')
                     email = input()
-                    print("-"*40)
+                    print('-'*210)
                     while True:
 
                         print('if you wish to use the default password press d else press p to generate your own password\n')
@@ -122,12 +122,12 @@ def main():
                             password = getpass.getpass('enter your password\n')
                             break
                         else:
-                            print("-"*40)
+                            print('-'*210)
                             print('please read the instructions carefully and try again')
-                            print("-"*40)
+                            print('-'*210)
                     save_users(create_user(first_name,last_name,user_name,email,password))
                     print('welcome to password locker' )
-                    print ('-'*40)
+                    print ('-'*210)
                     print(f"Here are your account details \n first name:{first_name} \n last_name: {last_name} \n user name: {user_name} \n email address: {email} \n password: {password}")
                     print ('\n')
 
@@ -135,26 +135,26 @@ def main():
                         print('Welcome back. To login please enter your details\n')
                         user_name = input('Enter your username: ')
                         password = getpass.getpass('enter your password ')
-                        
+
                         user_logs = confirmation_user(user_name,password)
 
                         if user_logs == user_name:
                             while True:
-                                print("-"*40)
-                                print('press c to create an account, d to display your credential, s to search your credential and ex to exit')
-                                print("-"*40)
-                                ac_code = input('Please enter an account of your choice that you wish to save: ').strip()
-                                print("-"*40)
+                                print('-'*210)
+                                print('press c to create an account, d to display your account credential, s to search your account credential and ex to exit')
+                                print('-'*210)
+                                ac_code = input('Please enter an a shortcode: ').strip()
+                                print('-'*210)
                                 if ac_code == 'c':
                                     account = input('enter the account you want to save\n')
-                                    print("-"*40)
+                                    print('-'*210)
                                     ac_password = input('enter the password to this account\n')
-                                    print("-"*40)
+                                    print('-'*210)
                                     # i am generating a secret-key to be able to such for the account saved
                                     while True:
-                                        print("-"*40)
+                                        print('-'*210)
                                         print('you have to create a secret key to be able to view your account.if you wish to create a secret key press sk else press dsk to get a default secret key')
-                                        print("-"*40)
+                                        print('-'*210)
                                         secretcode = input('plese enter an option to proceed \n').lower().strip()
                                         if secretcode == 'dsk':
                                             secretkey = "".join(random.sample(s, secpass))
@@ -173,12 +173,11 @@ def main():
 
                                 elif ac_code == 'd':
                                     if display_secretkeys():
-                                        print('-'*40)
+                                        print('-'*210)
                                         for credential in display_secretkeys():
-                                            print(f'account: {credential.account} \n Account password: {credential.password}\n ')
-                                        print('-'*40)
+                                            print(f'here are your search results\n account: {credential.account} \n Account password: {credential.password}\n ')
+                                        print('-'*210)
                                     else:
-                                        print('\n')
                                         print("No accounts found")
                                         print('\n')
 
@@ -194,7 +193,7 @@ def main():
                                     break
                         else:
                             print('user doesnt exist please register')
-                            print('-'*40)
+                            print('-'*210)
                 elif short_code == 'exit':
                     print ('exitting.....')
                     break
@@ -202,7 +201,7 @@ def main():
                 else:
                     print('\n')
                     print("please follow instructions and put any of the required short codes")
-                    
+
 
 
 if __name__ == '__main__':
